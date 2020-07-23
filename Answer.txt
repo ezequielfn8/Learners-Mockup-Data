@@ -1,0 +1,76 @@
+Here are my answers, in order:
+
+2. mail_domain	COUNT(*)
+ucsd.edu	193
+cps.edu	55
+ku.edu	50
+vt.edu	40
+oregonstate.edu	38
+msu.edu	33
+strathmore.edu	29
+u.northwestern.edu	25
+umich.edu	25
+nyu.edu	23
+asu.edu	22
+pace.edu	22
+berkeley.edu	18
+ucdavis.edu	17
+baylor.edu	16
+drexel.edu	16
+husky.neu.edu	16
+g.ucla.edu	15
+case.edu	13
+monmouth.edu	13
+ucsc.edu	13
+utexas.edu	13
+colorado.edu	12
+illinois.edu	12
+tamu.edu	12
+
+city	COUNT (*)
+New York	50
+
+Mobile App Users
+2000
+
+3. sign_up_at	Hour	Users Signed Up
+2018-09-28 18:02:40	18	185
+2018-09-28 16:00:48	16	183
+2018-09-28 17:19:43	17	174
+2018-09-28 19:04:00	19	147
+2018-09-28 20:03:18	20	138
+2018-09-27 22:14:58	22	105
+2018-09-27 21:06:14	21	104
+2018-09-27 23:00:28	23	104
+2018-09-28 15:01:22	15	103
+2018-09-28 14:04:01	14	101
+2018-09-28 00:00:10	00	100
+2018-09-28 01:05:43	01	93
+2018-09-28 03:06:43	03	84
+2018-09-28 13:01:50	13	80
+2018-09-28 04:00:05	04	74
+2018-09-28 02:01:29	02	73
+2018-09-28 06:06:58	06	30
+2018-09-28 05:12:02	05	29
+2018-09-28 12:24:49	12	27
+2018-09-29 08:08:18	08	18
+2018-09-28 07:17:15	07	16
+2018-09-28 11:00:26	11	13
+2018-09-28 10:16:05	10	10
+2018-09-28 09:07:34	09	9
+
+4. email_domain	cpp	sql	html	javascript	java
+alaska.edu	2	2	2	1	1
+aps.edu	3	3	2	2	1
+asu.edu	7	6	7	7	6
+auburn.edu	2	4	3	5	1
+baker.edu	1	1	1	1	1
+baylor.edu	5	13	5	8	2
+berkeley.edu	7	10	8	10	5
+bethelu.edu	1	1	1	1	1
+brandeis.edu	2	1	2	2	1
+bsu.edu	4	3	3	4	2
+
+city	cpp	sql	html	javascript	java
+Chicago	37	42	29	46	16
+New York	16	25	14	29	8
