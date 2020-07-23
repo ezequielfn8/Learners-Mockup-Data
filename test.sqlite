@@ -1,0 +1,132 @@
+SELECT email_domain, COUNT(*) FROM users
+GROUP BY 1
+ORDER BY 2 DESC
+LIMIT 25;
+
+SELECT city, COUNT (*) FROM users
+WHERE city = 'New York'
+AND email_domain LIKE '%.edu';
+
+SELECT COUNT (*) AS 'Mobile App Users' FROM users
+WHERE mobile_app IS NOT NULL;
+
+SELECT sign_up_at, strftime ('%H', sign_up_at) AS 'Hour',
+COUNT (*) AS 'Users Signed Up'
+FROM users
+GROUP BY 2
+ORDER BY 3 DESC;
+
+WITH cpp AS 
+(
+SELECT u.email_domain, COUNT(*) AS 'cpp'
+FROM users AS 'u'
+JOIN progress AS 'p'
+ON u.user_id = p.user_id
+WHERE p.learn_cpp IS NOT ''
+GROUP BY 1
+), 
+sql AS 
+(
+SELECT u.email_domain, COUNT(*) AS 'sql'
+FROM users AS 'u'
+JOIN progress AS 'p'
+ON u.user_id = p.user_id
+WHERE p.learn_sql IS NOT ''
+GROUP BY 1
+),
+html AS 
+(
+SELECT u.email_domain, COUNT(*) AS 'html'
+FROM users AS 'u'
+JOIN progress AS 'p'
+ON u.user_id = p.user_id
+WHERE p.learn_html IS NOT ''
+GROUP BY 1
+),
+javascript AS 
+(
+SELECT u.email_domain, COUNT(*) AS 'javascript'
+FROM users AS 'u'
+JOIN progress AS 'p'
+ON u.user_id = p.user_id
+WHERE p.learn_javascript IS NOT ''
+GROUP BY 1
+),
+java AS 
+(
+SELECT u.email_domain, COUNT(*) AS 'java'
+FROM users AS 'u'
+JOIN progress AS 'p'
+ON u.user_id = p.user_id
+WHERE p.learn_java IS NOT ''
+GROUP BY 1
+)
+SELECT c.email_domain, c.cpp, s.sql, h.html, j.javascript, i.java
+FROM cpp AS 'c'
+JOIN sql AS 's'
+ON c.email_domain = s.email_domain
+JOIN html AS 'h'
+ON c.email_domain = h.email_domain
+JOIN javascript AS 'j'
+ON c.email_domain = j.email_domain
+JOIN java AS 'i'
+ON c.email_domain = i.email_domain
+WHERE c.email_domain LIKE '%.edu'
+LIMIT 10;
+
+WITH cpp AS 
+(
+SELECT u.city, COUNT(*) AS 'cpp'
+FROM users AS 'u'
+JOIN progress AS 'p'
+ON u.user_id = p.user_id
+WHERE p.learn_cpp IS NOT ''
+GROUP BY 1
+), 
+sql AS 
+(
+SELECT u.city, COUNT(*) AS 'sql'
+FROM users AS 'u'
+JOIN progress AS 'p'
+ON u.user_id = p.user_id
+WHERE p.learn_sql IS NOT ''
+GROUP BY 1
+),
+html AS 
+(
+SELECT u.city, COUNT(*) AS 'html'
+FROM users AS 'u'
+JOIN progress AS 'p'
+ON u.user_id = p.user_id
+WHERE p.learn_html IS NOT ''
+GROUP BY 1
+),
+javascript AS 
+(
+SELECT u.city, COUNT(*) AS 'javascript'
+FROM users AS 'u'
+JOIN progress AS 'p'
+ON u.user_id = p.user_id
+WHERE p.learn_javascript IS NOT ''
+GROUP BY 1
+),
+java AS 
+(
+SELECT u.city, COUNT(*) AS 'java'
+FROM users AS 'u'
+JOIN progress AS 'p'
+ON u.user_id = p.user_id
+WHERE p.learn_java IS NOT ''
+GROUP BY 1
+)
+SELECT c.city, c.cpp, s.sql, h.html, j.javascript, i.java
+FROM cpp AS 'c'
+JOIN sql AS 's'
+ON c.city = s.city
+JOIN html AS 'h'
+ON c.city = h.city
+JOIN javascript AS 'j'
+ON c.city = j.city
+JOIN java AS 'i'
+ON c.city = i.city
+WHERE c.city = 'New York' OR c.city = 'Chicago';
